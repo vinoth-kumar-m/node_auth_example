@@ -154,3 +154,29 @@ exports.reports = function(req, res){
       res.render('reports.ejs',{data:result});
    });
 };
+
+//--------------------------------render user details after login--------------------------------
+exports.notify = function(req, res){
+
+   var sessionUserId = req.session.userId;
+   if(sessionUserId == null){
+      res.redirect("/login");
+      return;
+   }
+   
+   var userId = req.query.userId;
+   console.log("userId: ", userId);
+   var sql="SELECT * FROM `users` WHERE `id`='"+userId+"'";          
+   db.query(sql, function(err, results){      
+         if(results.length){
+            req.session.userId = results[0].id;
+            req.session.user = results[0];
+            console.log(results[0].id);
+            //res.redirect('/home/dashboard');
+         }
+         else{
+            message = 'Wrong Credentials.';
+            //res.render('index.ejs',{message: message});
+         }
+      });
+};

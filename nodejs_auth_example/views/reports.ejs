@@ -4,7 +4,7 @@
 <div class="panel panel-info">
    <div class="panel-heading">
       <!-- <h3 class="panel-title"><%=data[0].first_name%>, <%=data[0].last_name%></h3> -->
-       <h3 class="panel-title">Detail Reports <%=data.length %> </h3>
+       <h3 class="panel-title">Detail Reports </h3>
    </div>
    <div class="panel-body">
       <div class="row">
@@ -16,13 +16,13 @@
                   <td>Mobile</td>
                   <td>NotifyMe</td>
                   </th>
-                  <% for(var i =0; i<data.length; i++) { %>
+                  <% for(var i=0; i<data.length; i++) { %>
                   <tr>
                      <td><%=data[i].user_name%></td>
                      <td><%=data[i].mob_no%></td>
                      <td>
                         <p>
-                           <a class="btn btn-lg btn-primary" href="#" role="button">Send Notification » </a>
+                           <a class="btn btn-lg btn-primary" href="/home/notify?userId=<%=data[i].id%>" role="button">Send» </a>
                         </p>
                      </td>
                   </tr>
