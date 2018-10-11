@@ -48,7 +48,7 @@ app.get('/home/logout', user.logout);//call for logout
 app.get('/home/profile',user.profile);//to render users profile
 app.get('/home/entry',user.entry);//to render entry
 app.get('/home/reports',user.reports);//to render reports
-app.get('/home/notify',user.reports);//to render reports
+app.get('/home/notify',user.notify);//to render reports
 //Middleware
 app.listen(8080, function() {
     console.log("Server started. Listening on port 8080.");

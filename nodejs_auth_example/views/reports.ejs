@@ -1,36 +1,39 @@
 <%- include header %>
 <div class="row">
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-<div class="panel panel-info">
-   <div class="panel-heading">
-      <!-- <h3 class="panel-title"><%=data[0].first_name%>, <%=data[0].last_name%></h3> -->
-       <h3 class="panel-title">Detail Reports </h3>
-   </div>
-   <div class="panel-body">
-      <div class="row">
-         <div class=" col-md-9 col-lg-9 ">
-            <table class="table table-user-information">
-               <tbody>
-                  <th>
-                  <td>User Name</td>
-                  <td>Mobile</td>
-                  <td>NotifyMe</td>
-                  </th>
-                  <% for(var i=0; i<data.length; i++) { %>
-                  <tr>
-                     <td><%=data[i].user_name%></td>
-                     <td><%=data[i].mob_no%></td>
-                     <td>
-                        <p>
-                           <a class="btn btn-lg btn-primary" href="/home/notify?userId=<%=data[i].id%>" role="button">Send» </a>
-                        </p>
-                     </td>
-                  </tr>
-                <% } %>
-               </tbody>
-            </table>
-         </div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <!-- <h3 class="panel-title"><%=data[0].first_name%>, <%=data[0].last_name%></h3> -->
+        <h3 class="panel-title">Detail Reports </h3>
       </div>
-   </div>
-</div>
-<%- include footer %>
+      <div class="panel-body">
+        <div class="row">
+          <div class=" col-md-9 col-lg-9 ">
+            <table class="table table-user-information">
+              <thead>
+                <th>User Name</th>
+                <th>Mobile</th>
+                <th>NotifyMe</th>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<data.length; i++) { %>
+                <tr>
+                  <td>
+                    <%=data[i].user_name%>
+                  </td>
+                  <td>
+                    <%=data[i].mob_no%>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-primary" href="/home/notify?userId=<%=data[i].id%>" role="button">Send
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include footer %>
